@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "424202472162",
+    "project_id": "miternityhelper11",
+    "storage_bucket": "miternityhelper11.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424202472162:android:4d0fd2f15dd4bc17c5ecbb",
+        "android_client_info": {
+          "package_name": "com.example.meternity_hub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFogQl6iO970fuHbfqp-NhLSjqrsJZGjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
