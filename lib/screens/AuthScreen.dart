@@ -293,7 +293,7 @@ class _AuthscreenState extends State<Authscreen> {
                       height: 50,
                       width: 150,
                       decoration: BoxDecoration(
-                        color: const Color(0xff5a189a),
+                        color: const Color(0xFF6B5DE6),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Center(
@@ -313,7 +313,7 @@ class _AuthscreenState extends State<Authscreen> {
                       height: 50,
                       width: 150,
                       decoration: BoxDecoration(
-                        color: const Color(0xff5a189a),
+                        color: const Color(0xFF6B5DE6),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Center(

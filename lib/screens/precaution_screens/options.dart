@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meternity_hub/chatbot/chatbot.dart';
 import 'package:meternity_hub/screens/MainOptional.dart';
 import 'package:meternity_hub/screens/precaution_screens/healthcaretips.dart';
 import 'package:meternity_hub/screens/precaution_screens/precaution.dart';
@@ -109,16 +110,24 @@ class HealthcareHome extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF5C4BB0).withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: const Icon(
-                        Icons.medical_services,
-                        color: Color(0xFF5C4BB0),
-                        size: 32,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChatbotScreen()));
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF5C4BB0).withOpacity(0.1),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Icon(
+                          Icons.medical_services,
+                          color: Color(0xFF5C4BB0),
+                          size: 32,
+                        ),
                       ),
                     ),
                     const SizedBox(width: 15),

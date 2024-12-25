@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meternity_hub/chatbot/chatbot.dart';
+import 'package:meternity_hub/chatbot/static_chatscreen.dart';
+import 'package:meternity_hub/screens/MainOptional.dart';
 
 class DoctorConsultationScreen extends StatefulWidget {
   const DoctorConsultationScreen({super.key});
@@ -63,6 +66,10 @@ class _DoctorConsultationScreenState extends State<DoctorConsultationScreen> {
             const SizedBox(height: 40),
             _buildDoctorList(_selectedShift),
             SizedBox(
+              height: 30,
+            ),
+            _bot(context),
+            SizedBox(
               height: 50,
             )
           ],
@@ -72,41 +79,58 @@ class _DoctorConsultationScreenState extends State<DoctorConsultationScreen> {
   }
 
   Widget _buildHeader() {
-    return Container(
-      height: MediaQuery.of(context).size.height * 0.5,
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        color: Color(0xFF6B5DE6),
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(50),
-          bottomRight: Radius.circular(50),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Mainoptional()));
+      },
+      child: Container(
+        height: MediaQuery.of(context).size.height * 0.5,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          color: Color(0xFF6B5DE6),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(50),
+            bottomRight: Radius.circular(50),
+          ),
         ),
-      ),
-      child: const Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              'Consultation',
-              style: TextStyle(
-                fontSize: 30,
-                color: Colors.white,
-                fontFamily: 'Heading2',
-                fontWeight: FontWeight.w500,
+        child: const Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 44,
+                  ),
+                  Text(
+                    'Consultation',
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.white,
+                      fontFamily: 'Heading2',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Select a doctor for your consultation',
-              style: TextStyle(
-                fontSize: 17,
-                color: Colors.white,
-                fontFamily: 'Heading2',
+              SizedBox(height: 20),
+              Text(
+                'Select a doctor for your consultation',
+                style: TextStyle(
+                  fontSize: 17,
+                  color: Colors.white,
+                  fontFamily: 'Heading2',
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -200,7 +224,10 @@ class DoctorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ChatScreen()));
+      },
       child: Container(
         height: 240,
         width: 180,
@@ -251,4 +278,20 @@ class DoctorCard extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _bot(BuildContext context) {
+  return FloatingActionButton(
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ChatbotScreen()),
+      );
+    },
+    child: const Icon(
+      Icons.computer,
+      color: Colors.white,
+    ),
+    backgroundColor: const Color(0xFF6B5DE6),
+  );
 }
