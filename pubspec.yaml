@@ -43,6 +43,7 @@ dependencies:
   firebase_database: ^11.2.0
   email_otp: ^3.0.2
   shared_preferences: ^2.3.4
+  shelf: ^1.4.1
 
   
 

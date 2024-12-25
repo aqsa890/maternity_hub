@@ -110,13 +110,16 @@ class _AddAppointmentState extends State<AddAppointment> {
     // Reload appointments from Firebase
     _loadAppointments();
 
+    // Generate a unique integer ID for notifications
+    int notificationId = appointmentKey.hashCode & 0x7FFFFFFF;
+
     // Schedule the notification for the appointment
     await LocalNotifications.scheduleNotification(
       title: 'Appointment with Dr. ${doctorNameController.text}',
       body: 'CheckUp reminder.',
       payload: 'Appointment Notification',
       scheduledTime: appointmentDateTime,
-      appointmentId: int.parse(appointmentKey), // Use the key as the ID
+      appointmentId: notificationId, // Use hashCode as the ID
     );
   }
 

@@ -7,7 +7,7 @@ class PregnancyCareApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Pregnancy Care Tips',
+      title: 'Pregnancy Care Tips,',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: const Color(0xFF6B5DE6),

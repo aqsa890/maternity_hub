@@ -53,6 +53,7 @@ class _DoctorConsultationScreenState extends State<DoctorConsultationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -75,7 +76,7 @@ class _DoctorConsultationScreenState extends State<DoctorConsultationScreen> {
       height: MediaQuery.of(context).size.height * 0.5,
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Color(0xffe7c6ff),
+        color: Color(0xFF6B5DE6),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(50),
           bottomRight: Radius.circular(50),
@@ -91,7 +92,7 @@ class _DoctorConsultationScreenState extends State<DoctorConsultationScreen> {
               'Consultation',
               style: TextStyle(
                 fontSize: 30,
-                color: Colors.black,
+                color: Colors.white,
                 fontFamily: 'Heading2',
                 fontWeight: FontWeight.w500,
               ),
@@ -101,7 +102,7 @@ class _DoctorConsultationScreenState extends State<DoctorConsultationScreen> {
               'Select a doctor for your consultation',
               style: TextStyle(
                 fontSize: 17,
-                color: Colors.black,
+                color: Colors.white,
                 fontFamily: 'Heading2',
               ),
             ),
@@ -122,8 +123,8 @@ class _DoctorConsultationScreenState extends State<DoctorConsultationScreen> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: Color(0xff9d4edd),
-                  width: 0.7,
+                  color: Color(0xFF6B5DE6),
+                  width: 1,
                 )),
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             child: DropdownButton<String>(
@@ -198,51 +199,54 @@ class DoctorCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 240,
-      width: 180,
-      decoration: BoxDecoration(
-        color: const Color(0xff9d4edd),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Icon(
-              Icons.account_circle,
-              size: 80,
-              color: Colors.white,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              name,
-              style: const TextStyle(
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        height: 240,
+        width: 180,
+        decoration: BoxDecoration(
+          color: const Color(0xFF6B5DE6),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.account_circle,
+                size: 80,
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
               ),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              qualification,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 14,
+              const SizedBox(height: 10),
+              Text(
+                name,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              specialty,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 14,
+              Text(
+                qualification,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-          ],
+              Text(
+                specialty,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
         ),
       ),
     );

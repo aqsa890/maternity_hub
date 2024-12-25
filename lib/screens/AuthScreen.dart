@@ -347,7 +347,6 @@ class _AuthscreenState extends State<Authscreen> {
                 ),
               )),
             ),
-            const Positioned(bottom: -60, left: -60, child: Shape()),
             const Positioned(top: 580, right: -96, child: Shape()),
           ],
         ),

@@ -3,6 +3,7 @@ import 'package:meternity_hub/screens/AuthScreen.dart';
 import 'package:meternity_hub/screens/chatscreens/consultation.dart';
 import 'package:meternity_hub/screens/precaution_screens/options.dart';
 import 'package:meternity_hub/screens/schedulescreens/scheduleOPT.dart';
+import 'package:meternity_hub/screens/sos_screens/calling_Screen.dart';
 
 class Mainoptional extends StatefulWidget {
   const Mainoptional({super.key});
@@ -199,38 +200,44 @@ class _MainoptionalState extends State<Mainoptional> {
           const SizedBox(
             height: 100,
           ),
-          Container(
-            height: 65,
-            width: 280,
-            decoration: BoxDecoration(
-              color: const Color(0xFF6f12ba).withOpacity(0.9),
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black26,
-                  blurRadius: 6,
-                  offset: Offset(0, 4),
-                ),
-              ],
-            ),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.local_hospital,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                SizedBox(width: 10),
-                Text(
-                  'Emergency SOS',
-                  style: TextStyle(
-                    fontFamily: 'Poto',
-                    fontSize: 18,
-                    color: Colors.white,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CallScreen()));
+            },
+            child: Container(
+              height: 65,
+              width: 280,
+              decoration: BoxDecoration(
+                color: const Color(0xFF6B5DE6).withOpacity(0.9),
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black26,
+                    blurRadius: 6,
+                    offset: Offset(0, 4),
                   ),
-                ),
-              ],
+                ],
+              ),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.local_hospital,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  SizedBox(width: 10),
+                  Text(
+                    'Emergency SOS',
+                    style: TextStyle(
+                      fontFamily: 'Poto',
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

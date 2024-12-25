@@ -13,10 +13,10 @@ class EmergencyScreen extends StatelessWidget {
           child: Text(
             'Emergency Guidelines',
             style: TextStyle(
-              color: Color.fromARGB(255, 255, 255, 255),
-              fontWeight: FontWeight.w500,
-              fontSize: 26,
-            ),
+                color: Color.fromARGB(255, 255, 255, 255),
+                fontWeight: FontWeight.w500,
+                fontSize: 26,
+                fontFamily: "poto"),
           ),
         ),
         backgroundColor: const Color(0xFF5C4BB0),
